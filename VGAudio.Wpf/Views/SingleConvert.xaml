@@ -12,8 +12,7 @@
         <Grid.Resources>
             <local:DoubleToVisibilityConverter x:Key="DoubleToVisibilityConverter"/>
             <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
-            <local:BrstmToVisibilityConverter x:Key="BrstmToVisibilityConverter" />
-            <local:BcstmToVisibilityConverter x:Key="BcstmToVisibilityConverter" />
+            <local:BxstmToVisibilityConverter x:Key="BxstmToVisibilityConverter" />
         </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -101,10 +100,8 @@
                               SelectedValue="{Binding SelectedFileTypeBinding, Mode=TwoWay}"/>
                 </DockPanel>
                 <Grid Grid.Row="1">
-                    <local:Bcstm
-                        Visibility="{Binding SelectedFileType, Converter={StaticResource BcstmToVisibilityConverter}}" />
-                    <local:Brstm
-                        Visibility="{Binding SelectedFileType, Converter={StaticResource BrstmToVisibilityConverter}}" />
+                    <local:Bxstm
+                        Visibility="{Binding SelectedFileType, Converter={StaticResource BxstmToVisibilityConverter}}" />
                 </Grid>
             </Grid>
             <Grid Grid.Row="1">

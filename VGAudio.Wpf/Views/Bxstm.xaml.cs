@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace VGAudio.Wpf.Views
 {
     /// <summary>
-    /// Interaction logic for Brstm.xaml
+    /// Interaction logic for Bxstm.xaml
     /// </summary>
-    public partial class Brstm : UserControl
+    public partial class Bxstm : UserControl
     {
-        public Brstm()
+        public Bxstm()
         {
             InitializeComponent();
         }
