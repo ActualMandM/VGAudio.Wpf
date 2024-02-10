@@ -13,6 +13,7 @@
             <local:DoubleToVisibilityConverter x:Key="DoubleToVisibilityConverter"/>
             <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
             <local:BxstmToVisibilityConverter x:Key="BxstmToVisibilityConverter" />
+            <local:AdxToVisibilityConverter x:Key="AdxToVisibilityConverter" />
         </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -102,6 +103,8 @@
                 <Grid Grid.Row="1">
                     <local:Bxstm
                         Visibility="{Binding SelectedFileType, Converter={StaticResource BxstmToVisibilityConverter}}" />
+                    <local:Adx
+                        Visibility="{Binding SelectedFileType, Converter={StaticResource AdxToVisibilityConverter}}" />
                 </Grid>
             </Grid>
             <Grid Grid.Row="1">

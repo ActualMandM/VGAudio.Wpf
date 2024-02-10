@@ -20,6 +20,7 @@ using VGAudio.Containers.Idsp;
 using VGAudio.Containers.NintendoWare;
 using VGAudio.Wpf.Annotations;
 using VGAudio.Wpf.Audio;
+using VGAudio.Utilities;
 
 namespace VGAudio.Wpf.ViewModels
 {
@@ -43,6 +44,12 @@ namespace VGAudio.Wpf.ViewModels
             [NwCodec.GcAdpcm] = "DSP-ADPCM",
             [NwCodec.Pcm16Bit] = "16-bit PCM",
             [NwCodec.Pcm8Bit] = "8-bit PCM"
+        };
+
+        public Dictionary<Endianness, string> EndiannessBinding { get; } = new Dictionary<Endianness, string>
+        {
+            [Endianness.BigEndian] = "Big-Endian",
+            [Endianness.LittleEndian] = "Little-Endian"
         };
 
         public FileType SelectedFileType { get; set; } = FileType.Dsp;
@@ -224,7 +231,7 @@ namespace VGAudio.Wpf.ViewModels
                 {
                     var watch = new Stopwatch();
                     watch.Start();
-                    Parallel.ForEach(InFiles, file =>
+                    System.Threading.Tasks.Parallel.ForEach(InFiles, file =>
                     {
                         Saving = true;
                         if (File.Exists(file))
